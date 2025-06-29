@@ -3,24 +3,11 @@ export { default as Main } from './main';
 export { default as Footer } from './Footer';
 export { default as DynamicForm } from './DynamicForm';
 export { default as MRIForm } from './MRIForm';
-export { default as Loader } from './Loader';
 export { default as ServiceInfo } from './ServiceInfo';
-export { default as MapSection } from './MapSection';
-export { default as Success } from './Success';
+
 export { default as Failed } from './Failed';
 export { default as StartHome } from './StartHome';
-export { default as WhyMR } from './WhyMR';
-export { default as Counter } from './Counter';
+
 export { default as MainInfo } from './MainInfo';
-export { default as StepsIcons } from './StepsIcons';
-export { default as MRFullBodyScan } from './MRHelkropp';
-export { default as Message } from './MessageBox';
-export { default as TranslateWidget } from './TranslateWidget';
-export { default as Partners } from './Partners';
-export { default as PricelistK } from './PricelistKontrast';
-export { default as Pricelist } from './PricelistMRI';
-export { default as PricelistCT } from './PricelistCT';
 export { default as Before } from './BeforeScan';
 export { default as GoogleReviews } from './Reviews';
-export { default as TopHome } from './TopHome';
-export { default as HomePriceInfo} from './HomePriceInfo';
