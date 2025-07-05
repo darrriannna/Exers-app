@@ -1,171 +1,173 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation  } from 'react-router-dom';
-import { NavLink } from 'react-router-dom'; 
-import "../styles/index.css";
+import React, { useState } from 'react';
+import '../styles/index.css';
+import { useNavigate } from 'react-router-dom';
 
-const services = [
-  { id: 1, name: 'MR Ländrygg', price: '3 900kr', paymentLink: 'https://buy.stripe.com/6oE5mBf5HcTB43maF6' },
-  { id: 2, name: 'MR Höger Axel', price: '4 100kr', paymentLink: 'https://buy.stripe.com/aEU9CRbTv4n56bufZi' },
-  { id: 3, name: 'MR Vänster Axel', price: '4 100kr', paymentLink: 'https://buy.stripe.com/dR68yN0aNf1J1VefZz' },
-  { id: 4, name: 'MR Bäcken/höftleder', price: '3 900kr', paymentLink: 'https://buy.stripe.com/8wM9CR6zbbPxarK8wZ' },
-  { id: 5, name: 'MR Vänster Knä', price: '3 900kr', paymentLink: 'https://buy.stripe.com/3csaGV3mZg5N6bu9AK' },
-  { id: 6, name: 'MR Helkropp', price: '18 400kr', paymentLink: 'https://buy.stripe.com/4gw9CRcXz1aT2Zi5kB' },
-  { id: 7, name: 'MR Bröstrygg', price: '3 900kr', paymentLink: 'https://buy.stripe.com/00gbKZ2iVg5N6bu8x1' },
-  { id: 8, name: 'MR Höger Fot', price: '3 900kr', paymentLink: 'https://buy.stripe.com/eVa2ap5v74n58jC9AS' },
-  { id: 9, name: 'MR Vänster Fot', price: '3 900kr', paymentLink: 'https://buy.stripe.com/14k16l4r34n5bvO7sA' },
-  { id: 10, name: 'MR Höger Fotled', price: '3 900kr', paymentLink: 'https://buy.stripe.com/8wMbKZ0aN9Hp43m00m' },
-  { id: 11, name: 'MR Vänster Fotled', price: '3 900kr', paymentLink: 'https://buy.stripe.com/00gaGV5v7cTBdDW3cj' },
-  { id: 12, name: 'MR Höger Hand', price: '3 900kr', paymentLink: 'https://buy.stripe.com/dR6eXbe1D8DlarK6oJ' },
-  { id: 13, name: 'MR Vänster Hand', price: '3 900kr', paymentLink: 'https://buy.stripe.com/00gdT7cXz9Hp6bu006' },
-  { id: 14, name: 'MR Hälsena', price: '3 900kr', paymentLink: 'https://buy.stripe.com/cN27uJ3mZaLt2Zi5kQ' },
-  { id: 15, name: 'MR Höger Armbåge', price: '3 900kr', paymentLink: 'https://buy.stripe.com/28o3etbTvdXF43m14u' },
-  { id: 16, name: 'MR Vänster Armbåge', price: '3 900kr', paymentLink: 'https://buy.stripe.com/eVa02h6zb9Hp2ZidQV' },
-  { id: 17, name: 'MR Höger Underben', price: '3 900kr', paymentLink: 'https://buy.stripe.com/00g16l0aNdXF2Zi28z' },
-  { id: 18, name: 'MR Vänster Underben', price: '3 900kr', paymentLink: 'https://buy.stripe.com/cN2eXbf5HdXF2ZiaEI' },
-  { id: 19, name: 'MR Sacrum/Sacroliacaleder', price: '3 900kr', paymentLink: 'https://buy.stripe.com/cN202hg9LbPx1Ve28F' },
-  { id: 22, name: 'MR Nacke/Halsrygg', price: '3 900kr', paymentLink: 'https://buy.stripe.com/6oEaGVbTvaLt57q6oW' },
-  { id: 23, name: 'MR Helrygg', price: '9 000kr', paymentLink: 'https://buy.stripe.com/4gw4ix9Ln8Dl8jC8wL' },
-  { id: 26, name: 'MR Höger Knä', price: '3 900kr', paymentLink: 'https://buy.stripe.com/7sI4ix7DfcTBbvO9AT'  },
-  {id: 29, name: 'MR Höger Överarm', price: '3 900kr', paymentLink: 'https://buy.stripe.com/8wM3etaPrf1JczSbJ5' },
-  {id: 30, name: 'MR Vänster Överarm', price: '3 900kr', paymentLink: 'https://buy.stripe.com/9AQdT70aNf1J7fy6or' },
-  {id: 31, name: 'MR Höger Underarm', price: '3 900kr', paymentLink: 'https://buy.stripe.com/aEU8yN0aN5r9fM4eV6' },
-  {id: 32, name: 'MR Vänster Underarm', price: '3 900kr', paymentLink: 'https://buy.stripe.com/dR616l6zb6vd6bu3ce' },
-  {id: 33, name: 'MR Höger Handled', price: '3 900kr', paymentLink: 'https://buy.stripe.com/7sI6qFcXzf1JczSeVi'  },
-  {id: 34, name: 'MR Vänster Handled', price: '3 900kr', paymentLink: 'https://buy.stripe.com/fZe8yN0aNaLtgQ85kl'  },
-
-];
+const painTypes = ['Molande', 'Stickande', 'Skärande', 'Brännande', 'Tryckande'];
+const painAreas = ['Huvud', 'Nacke', 'Axlar', 'Rygg', 'Bröst', 'Mage', 'Armar', 'Ben', 'Händer', 'Fötter', 'Leder'];
+const durations = ['Mindre än 1 månad', '1–2 månader', '3–6 månader', '1 år', 'Mer än 1 år'];
 
 const DynamicForm = () => {
-  const [selectedExamination, setSelectedExamination] = useState('');
-  const [selectedCity, setSelectedCity] = useState('');
-  const [showExaminationDropdown, setShowExaminationDropdown] = useState(false);
-  const [showCityDropdown, setShowCityDropdown] = useState(false);
+  const [location, setLocation] = useState(() => localStorage.getItem('location') || '');
+  const [selectedPainTypes, setSelectedPainTypes] = useState([]);
+  const [selectedPainAreas, setSelectedPainAreas] = useState([]);
+  const [selectedDuration, setSelectedDuration] = useState('');
+  const [mediciner, setMediciner] = useState('');
+  const [sjukdomar, setSjukdomar] = useState('');
   const navigate = useNavigate();
-  const location = useLocation(); // Use location to access passed state
 
-  const cities = [
-  'Göteborg Backa',
-  'Göteborg Haga',
-  'Göteborg Mölndal GoCo',
-  'Jönköping',
-  'Karlstad',
-  'Malmö Hyllie',
-  'Stockholm Klara Strand',
-  'Stockholm Sabbatsberg',
-  'Sundsvall',
-  'Umeå',
-     ];
-
-  // Extract serviceName from the passed state
-  useEffect(() => {
-    if (location.state && location.state.serviceName) {
-      setSelectedExamination(location.state.serviceName);
+  const toggleSelection = (item, list, setList) => {
+    if (list.includes(item)) {
+      setList(list.filter(i => i !== item));
+    } else {
+      setList([...list, item]);
     }
-  }, [location.state]);
-
-  const toggleExaminationDropdown = () => setShowExaminationDropdown(!showExaminationDropdown);
-  const toggleCityDropdown = () => setShowCityDropdown(!showCityDropdown);
-
-  const handleExaminationClick = (name) => {
-    setSelectedExamination(name);
-    setShowExaminationDropdown(false);
   };
 
-  const handleCityClick = (city) => {
-    setSelectedCity(city);
-    setShowCityDropdown(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const painData = {
+      location,
+      types: selectedPainTypes,
+      areas: selectedPainAreas,
+      duration: selectedDuration,
+      mediciner,
+      sjukdomar
+    };
+
+    localStorage.setItem('painData', JSON.stringify(painData));
+    localStorage.setItem('location', location); // optional backup
+
+    navigate('/bestalla');
   };
-
-  const selectedService = services.find(service => service.name === selectedExamination);
-
-  const handleBookClick = () => {
-    // Save selected service details in localStorage
-  localStorage.setItem(
-    'bookingData',
-    JSON.stringify({
-      serviceName: selectedExamination,
-      city: selectedCity,
-      price: selectedService?.price,
-      paymentLink: selectedService?.paymentLink,
-    })
-  );
-
-  // Navigate to the booking page with the selected details
-  navigate('/mri-boka', {
-    state: {
-      serviceName: selectedExamination,
-      city: selectedCity,
-      price: selectedService?.price,
-      paymentLink: selectedService?.paymentLink,
-    },
-  });
-};
-
 
   return (
-    <div className='container-form-main'>
-    <div className="form-container">
-      <div></div>
-      <h2 className='text-center main-title-form'>Boka privat röntgen utan remiss</h2>
+    <div className='wrapper-df'>
+      <div className="pain-form-container">
+        <h2 className="form-title">Beskriv din smärta</h2>
+        <form onSubmit={handleSubmit}>
+          
+          {/* Location */}
+          <div className="form-group">
+            <label>Var vill du göra dina övningar?</label>
+            <div className="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="location"
+                  value="Hem"
+                  checked={location === 'Hem'}
+                  onChange={(e) => setLocation(e.target.value)}
+                  required
+                />
+                Hemma
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="location"
+                  value="Gym"
+                  checked={location === 'Gym'}
+                  onChange={(e) => setLocation(e.target.value)}
+                />
+                På gymmet
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="location"
+                  value="Både"
+                  checked={location === 'Både'}
+                  onChange={(e) => setLocation(e.target.value)}
+                />
+                Både hemma och gym
+              </label>
+            </div>
+          </div>
 
-      <form>
-        <div className="form-group">
-         
-          <button type="button" className="dropdown-toggle" onClick={toggleExaminationDropdown}>
-            {selectedExamination || 'Välj undersökning'}
-          </button>
-          {showExaminationDropdown && (
-            <div className="dropdown-content">
-              {services.map(service => (
-                <button key={service.id} type="button" className="dropdown-button" onClick={() => handleExaminationClick(service.name)}>
-                  {service.name}
+          {/* Pain Types */}
+          <div className="form-group">
+            <label>Typ av smärta:</label>
+            <div className="multi-select">
+              {painTypes.map(type => (
+                <button
+                  type="button"
+                  key={type}
+                  className={`option-btn ${selectedPainTypes.includes(type) ? 'selected' : ''}`}
+                  onClick={() => toggleSelection(type, selectedPainTypes, setSelectedPainTypes)}
+                >
+                  {type}
                 </button>
               ))}
             </div>
-          )}
-        </div>
-
-        {selectedExamination && (
-          <div className="form-group">
-            <p className='form-field-title'>Välj stad (A-Ö)</p>
-            <button type="button" className="dropdown-toggle" onClick={toggleCityDropdown}>
-              {selectedCity || 'Välj stad'}
-            </button>
-            {showCityDropdown && (
-              <div className="dropdown-content">
-                {cities.map(city => (
-                  <button key={city} type="button" className="dropdown-button" onClick={() => handleCityClick(city)}>
-                    {city}
-                  </button>
-                ))}
-              </div>
-            )}
           </div>
-        )}
 
-        {selectedExamination && selectedCity && (
-          <>
-            <div className="form-group">
-              <p className='form-price'>Pris: {selectedService?.price}</p>
+          {/* Pain Areas */}
+          <div className="form-group">
+            <label>Var känner du smärta?</label>
+            <div className="multi-select">
+              {painAreas.map(area => (
+                <button
+                  type="button"
+                  key={area}
+                  className={`option-btn ${selectedPainAreas.includes(area) ? 'selected' : ''}`}
+                  onClick={() => toggleSelection(area, selectedPainAreas, setSelectedPainAreas)}
+                >
+                  {area}
+                </button>
+              ))}
             </div>
-            <div className="form-group">
-              <button type="button" className="booking-button" onClick={handleBookClick}>
-                Boka undersökning
-              </button>
-            </div>
-          </>
+          </div>
 
-        )}
-        <NavLink to="/villkor" className="restrictions"> Villkor och Begränsningar </NavLink>
+          {/* Pain Duration */}
+          <div className="form-group">
+            <label>Hur länge har du haft smärta?</label>
+            <select
+              value={selectedDuration}
+              onChange={(e) => setSelectedDuration(e.target.value)}
+              required
+            >
+              <option value="">Välj tidsperiod</option>
+              {durations.map(duration => (
+                <option key={duration} value={duration}>{duration}</option>
+              ))}
+            </select>
+          </div>
 
-      </form>
-      <div></div>
-    </div>
+          {/* Mediciner */}
+          <div className="form-group">
+            <label>Tar du några mediciner?</label>
+            <textarea
+              className="textarea-field"
+              value={mediciner}
+              onChange={(e) => setMediciner(e.target.value)}
+              placeholder="Skriv dina mediciner här..."
+            />
+          </div>
+
+          {/* Sjukdomar */}
+          <div className="form-group">
+            <label>Har du några sjukdomar?</label>
+            <textarea
+              className="textarea-field"
+              value={sjukdomar}
+              onChange={(e) => setSjukdomar(e.target.value)}
+              placeholder="Skriv sjukdomar här..."
+            />
+          </div>
+
+          <button type="submit" className="submit-btn">Fortsätta</button>
+        </form>
+      </div>
     </div>
   );
 };
 
 export default DynamicForm;
+
+
+
+
 
 
 

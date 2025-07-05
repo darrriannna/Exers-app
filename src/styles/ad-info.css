@@ -1,965 +1,152 @@
-/* Container layout */
-.container-varfor {
-    display: flex;
-    align-items: flex-start;
-    background: transparent;
-    border-radius: 12px;
-    padding: 20px;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-  }
-  
-  /* Content styles */
-  .content-varfor {
-    flex: 1;
-    color: #333;
-  }
-  
-  .title-varfor {
-    font-size: 2rem;
-    color: #0046b3;
-    margin-bottom: 16px;
-  }
-  
-  .description-varfor {
-    font-size: 1rem;
-    margin-bottom: 24px;
-  }
-  
-  .subheader-varfor {
-    font-size: 1.6rem;
-    color: #0046b3;
-   font-weight: 600;
-    margin-bottom: 12px;
-  }
-  
-  /* List styles */
-  .list-varfor {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .list-item-varfor {
-    background: #c0cfff66;
-    box-shadow: 1px 2px 3px #007bff;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    font-size: 1rem;
-  }
-  
-  /* Image styles */
-  .image-varfor {
-    max-width: 550px;
-    border-radius: 12px;
-  }
-  
-  /* Responsive design for small screens */
-  @media (max-width: 768px) {
-    .container-varfor {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .image-varfor {
-      max-width: 100%;
-      margin-top: 20px;
-
-    }
-  }
-  /* Main container for the toggle component */
-/* Wrapper for the entire component */
-.gif-toggle-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 1000px;
-    margin: auto;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Background GIF container */
-  .gif-background {
-    width: 100%;
-    height: 600px;
-    background: url("../../public/assets/Steps-new.jpg") center center / cover no-repeat;
-    position: relative;
-  }
-  
-  /* Text and arrow toggle positioned on top of the GIF */
-  .overlay-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-    z-index: 2;
-  }
-  
-  .overlay-content h2 {
-    font-size: 45px;
-    font-weight: 400;
-    text-align: center;
-    max-width: 800px;
-    margin: 0;
-  }
-.steps-container{
-  margin: 0;
-}
-  .overlay-content h2 span {
-    color: #007bff;
-    font-size: 50px;
-    font-weight: 600;
-  } 
-   @media (max-width: 768px) {
-
-    .overlay-content h2 span {
-    font-size: 38px;
-    }
-    .overlay-content h2 {
-      font-size: 34px;
-    }
-}
-  .step-box {
-    margin: 10px 0;
-    padding: 15px 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 24px;
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s ease;
-  }
-  
-  .step-box:hover {
-    background: rgba(255, 255, 255, 1);
-    transform: translateY(-2px);
-  }
-  .arrow-icon {
-    background-color: transparent;
-    height: 2.8em;
-    width: 2.8em;
-    display: block;
-    padding: 0.5em;
-    margin: 1em auto;
-    position: relative;
-    cursor: pointer;
-    margin: 20px;
-    border-radius: 4px;
-    border: none;
-  }
-  
-  .left-bar,
-  .right-bar {
-    position: absolute;
-    background-color: white;
-    width: 40px;
-    height: 10px;
-    display: block;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-  
-  .left-bar {
-    top: 0;
-    left: 0;
-    transform: rotate(35deg);
-  }
-  
-  .right-bar {
-    top: 0;
-    left: 26px;
-    transform: rotate(-35deg);
-  }
-  
-  .arrow-icon.open .left-bar {
-    transform: rotate(-35deg);
-  }
-  
-  .arrow-icon.open .right-bar {
-    transform: rotate(35deg);
-  }
-  
-.step-number{
-    font-size: 20px;
-    color: #1d9bf0;
-}
-
-/* Container Styling */
-.mr-scan-container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  padding-bottom: 20px;
-  background-color: #31bac776;
-  color: black;
-
-}
-
-/* Title and Subtitle */
-.mr-scan-title {
-  text-align: center;
-  font-size: 35px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: black;
-}
-
-.mr-scan-subtitle {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 30px;
- color: black;
-}
-
-/* Grid Layout */
-.mr-scan-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-/* Category Box */
-.mr-scan-category {
-  background-color: rgba(255, 255, 255, 0.68);
-  padding: 25px;
-  border-radius: 8px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.mr-scan-category:hover {
-  transform: scale(1.02);
-}
-
-.mr-scan-category-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #31BBC7;
-  margin-bottom: 10px;
-}
-
-/* List Styling */
-.mr-scan-list {
- 
-  padding: 10px;
-  margin: 0;
-}
-
-.mr-scan-list li {
-  margin-bottom: 5px;
-  font-size: 15px;
-}
-
-/* Discount Box */
-.mr-scan-discount {
-  margin-top: 25px;
-  padding: 15px;
-  background-color: #ff3366;
-  color: white;
-  text-align: center;
-  border-radius: 8px;
-}
-
-.mr-scan-discount-text {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.mr-scan-discount-days {
-  display: block;
-  margin-top: 5px;
-  font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .mr-scan-grid {
-    grid-template-columns: 1fr;
-  }
-  .mr-scan-title {
-    font-size: 22px;
-  }
-  .mr-scan-subtitle {
-    font-size: 16px;
-  }
-}
-
-.klarna-notice {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #f8f8f8;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  z-index: 9999; /* This ensures the notice is on top of other content */
-  width: auto;
-  max-width: 360px; /* You can adjust the width */
-}
-
-.klarna-logo {
-  width: 45px; /* Adjust size */
-  height: auto;
-  margin-right: 10px; /* Adjust space between the logo and the text */
-}
-
-.klarna-message {
-  flex: 1; /* This makes the message text take up the remaining space */
-  text-align: center; /* This will center the text horizontally */
-  margin: 0;
-  font-size: 13px; /* Adjust font size if needed */
-}
-
-.close-btn {
-  background: none;
-  border: none;
-  font-size: 30px;
-  color: #333;
-  cursor: pointer;
-  margin-left: 10px;
-  padding: 0;
-  line-height: 1;
-}
-
-.close-btn:hover {
-  color: #e60000; /* Red color for hover effect */
-}
-/* Ensure full-page centering */
-
-/* Ensure full-page centering */
-.partners-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-height: 800px; /* Full viewport height */
-  text-align: center;
-}
-
-/* Horizontal layout for images */
-.partner-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center images horizontally */
-  align-items: center;
-  gap: 20px; /* Space between logos */
-  width: 80%;
-  max-width: 1200px;
-}
-
-/* Styling for each partner logo */
-.partner-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 160px; /* Set a uniform width */
-  height: 120px; /* Set a uniform height */
-  transition: transform 0.3s ease-in-out;
-}
-@media (max-width: 768px){
-  .partner-card{
-    width: 130px;
-    height: 90px;
-  }
-}
-/* Ensure images fit properly */
-.partner-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Hover effect - scale up */
-.partner-card:hover {
-  transform: scale(1.1);
-}
-
-/* Main container */
-.container-about-services {
-  width: 100%;
-  margin: auto;
-}
-
-/* Custom row layout with background image */
-.custom-row-all {
-  background-image: url("../../public/assets/vara-tjanster.jpg"); /* Ensure the path is correct */
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  min-height: 80vh;
-  display: flex;
-  align-items: flex-start; /* Align content to the top */
-  justify-content: center; /* Align to the left */
-  padding: 2rem;
-  position: relative;
-  flex-wrap: wrap;
-  
-}
-
-/* Package navigation buttons */
-.package-nav {
-  display: flex;
-  margin-top: 20px;
-  flex-direction: column; /* Stack buttons vertically on small screens by default */
-  gap: 10px;
-  width: 100%;
-  max-width: 250px; /* Adjust the max width for larger screens */
-  margin-bottom: 20px;
-}
-
-/* Button styles */
-.package-nav-btn {
-  background-color: #31BBC7;
-  color: white;
-  border: none;
-  width: 270px;
-  padding: 10px 20px;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-/* Active button styles */
-.package-nav-btn.active {
-  background-color: #066972;
-}
-
-/* Hover effect for buttons */
-.package-nav-btn:hover {
-  background-color: #0f8d99;
-}
-
-/* Package info (description) styling */
-.package-info {
-  max-width: 900px;
-  text-align: center;
-  padding: 30px;
-  font-size: 18px;
-  background: #333333d8;
-  color: #f8f8f8;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-}
-
-/* Responsive Design: Small screens */
-@media (max-width: 768px) {
-  .custom-row-all {
-    flex-direction: column; /* Stack the buttons and info vertically */
-    align-items: center; /* Center align the content */
-  }
-
-  .package-nav {
-    flex-direction: column; /* Ensure buttons are in a column */
-    align-items: center;
-    width: 100%; /* Make sure buttons take full width */
-  }
-
-  .package-info {
-    width: 100%; /* Ensure description takes full width */
-    margin-top: 20px;
-    text-align: center; /* Ensure the text is centered */
-  }
-}
-
-/* Responsive Design: Large screens (min-width 700px) */
-@media (min-width: 700px) {
-  .custom-row-all {
-    flex-direction: row; /* Arrange buttons and info side by side */
-    gap: 20px; /* Add gap between the buttons and description */
-  }
-
-  .package-nav {
-    flex-direction: column; /* Keep buttons stacked vertically on the left */
-    align-items: flex-start; /* Align buttons to the left */
-    margin-right: 20px; /* Add spacing between buttons and info */
-  }
-
-  .package-info {
-    text-align: left; /* Align text to the left */
-  }
-}
-
-.package-features li{
-  font-size: 20px;
-  padding: 5px ;
-  text-align: left;
-}
-/* General styling for container */
-.statistics-container {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-}
-
-/* Flex wrapper for content */
-.content-wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  width: 100%;
-  max-width: 1200px;
-}
-
-/* Left Section - Dynamic Form and Text */
-.left-section {
-  flex: 1.5;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Right Section - Statistics Cards */
-.right-section {
-  flex: 1;
-}
-
-/* Card Styling */
-.statistics-section {
-  margin-bottom: 20px;
-}
-
-.stat-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat-image {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
-  margin-bottom: 15px;
-}
-
-.stat-content {
-  text-align: center;
-}
-
-.statistics-text {
-  font-size: 1rem;
-  margin-top: 10px;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
-  }
-
-  .left-section, .right-section {
-    width: 100%;
-  }
-  
-  .stat-image {
-    max-width: 100%;
-    max-width: 150px;
-  }
-}
-.carousel-container {
-  max-width: 1300px;
-  margin: 0 auto;
+.rehab-plan-section {
   padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+  color: #043D31;
 }
 
-.review-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  padding: 24px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  min-height: 280px;
-  box-sizing: border-box;
+.rehab-plan-title {
+  font-size: 45px;
+  margin-bottom: 40px;
 }
 
-.review-top {
+.rehab-plan-cards {
   display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.avatar-circle {
-  width: 48px;
-  height: 48px;
-  background: #e8f0fe;
-  border-radius: 50%;
-  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  color: #202124;
-  font-size: 16px;
-  margin-right: 12px;
-  overflow: hidden;
+  gap: 32px;
 }
 
-.avatar-img {
+.rehab-plan-card {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.avatar-initials {
-  font-size: 16px;
-}
-
-.review-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.review-name {
-  font-weight: bold;
-  color: #202124;
-}
-
-.review-date {
-  font-size: 13px;
-  color: #5f6368;
-}
-
-.review-text {
-  font-size: 15px;
-  color: #3c4043;
-  margin-bottom: 16px;
-  line-height: 1.5;
-}
-
-.review-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.stars {
-  color: #fbbc04;
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-
-.google-icon {
-  width: 24px;
-  height: 24px;
-}
-.private-mri-section {
-  padding: 4rem 2rem;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-}
-
-.mri-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 1000px;
-  width: 100%;
-}
-
-@media (min-width: 1024px) {
-  .mri-content {
-    flex-direction: row;
-  }
-}
-
-.info-box {
-  flex: 1;
-  background: rgba(52, 171, 198, 0.58);
-  border-radius: 30px;
-  padding: 2rem;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.info-box h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.info-box ul {
-  list-style: none;
-  padding-left: 0;
-  font-size: 1.4rem;
-  line-height: 1.6;
-  font-weight: 400;
-}
-@media (max-width: 824px){
-  .info-box h2 {
-    font-size: 1.7rem;
-    margin-bottom: 1.5rem;
-  }
-  .info-box ul {
-    list-style: none;
-    padding-left: 0;
-    font-size: 1rem;
-    line-height: 1.6;
-    font-weight: 400;
-  }
-  .price-box ul {
-    margin-bottom: 0.3rem;
-    font-size: 1rem;
-    list-style: none;
-    padding-left: 0;
-  }
-}
-
-.learn-more-btn {
-  min-width: 200px;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  padding: 0.75rem 1rem;
-  background: transparent;
-  color: white;
-  border: 3px solid white;
-  font-size: 1.3rem;
-  cursor: pointer;
-
-}
-
-.learn-more-link {
-  min-width: 200px;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  padding: 0.75rem 1rem;
-  background: transparent;
-  color: #0baed3;
-  border: 3px solid #0baed3;
-  font-size: 1.3rem;
-  font-weight: 500;
-  cursor: pointer;
-  
-}
-.learn-more-btn a{
-  text-decoration: none;
-  color: #f8f8f8;
-  font-weight: 500 ;
-}
-
-.price-box {
-  flex: 1;
-  background: white;
-  border: 1px solid #0baed3;
-  border-radius: 30px;
-  padding: 2rem;
-  box-shadow: 4px 4px 4px #0baed3;
-}
-
-.price-box h3 {
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.price-box h3 span {
-  color: #0baed3;
-  font-weight: 500;
-}
-
-.price-box ul {
-  margin-bottom: 0.3rem;
-  font-size: 1.2rem;
-  list-style: none;
-  padding-left: 0;
-}
-
-.price-box .note {
-  margin-top: 1.3rem;
-  font-style: italic;
-  font-size: 1.2rem;
-}
-
-.price-box h4 {
-  font-size: 1.6rem;
-  margin-top: 1.3rem;
-}
-
-.price-box .price {
-  font-size: 1.7rem;
-  color: #0baed3;
-  font-weight: bold;
-  
-}
-@media (max-width: 824px){
-  
-  .price-box ul {
-    margin-bottom: 0.3rem;
-    font-size: 1rem;
-    list-style: none;
-    padding-left: 0;
-  }
-}
-
-.price-box a {
-  color: #0baed3;
-  text-decoration: none;
-  font-weight: 500;
-}
-.steps-home-container{
-  max-width: 1000px;
-  width: 100%;
-  min-height: 250px;
-  background-image: url(../../public/assets/small-screen-top.png);
-  border-radius: 30px;
- display: inline;
-}
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 1000px;
-  width: 100%;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-@media (min-width: 768px) {
-  .steps {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: center;
-    top: 50%;
-  }
-}
-
-.step-card {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.25) 0%, rgba(237, 237, 237, 0.5) 100%);
-  border-radius: 30px;
-  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 3rem 1rem 1rem;
+  max-width: 360px;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
   position: relative;
-  text-align: center;
-  flex: 1;
 }
 
-.step-circle {
+.rehab-plan-basic {
+  background: linear-gradient(212.88deg, #EBF6E4 9.18%, #D6E9CB 80.79%, #E5FFD4 97.31%);
+}
+
+.rehab-plan-featured {
+  background: linear-gradient(148.1deg, #F0F0F0 8.14%, #F7FFF1 90.54%);
+}
+
+.rehab-plan-followup {
+  background: linear-gradient(152.25deg, #036551 5.93%, #043D31 92.03%);
+  color: white;
+}
+
+.rehab-plan-tag {
   position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 84px;
-  height: 84px;
-  background: #c2f4ff;
-  border: 5px solid white;
-  border-radius: 50%;
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 84px;
-  text-align: center;
-}
-.booking-button-steps{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 20px ;
-}
-.booking-button-price {
-  background-color: #0BAED3;
-  border: 3px solid #0BAED3;
-  color: #fff;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 1.4rem;
+  top: -20px;
+  right: 20px;
+  background: linear-gradient(180deg, #005645 0%, #00715A 50%, #005645 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 18px;
   font-weight: 500;
-  padding: 18px 32px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
- 
 }
 
-.booking-button-price:hover {
-  background-color: #0998ba;
-  text-decoration: none;
-  color: white;
-}
-.booking-main-link{
-  text-decoration: none;
-  color: white;
-}
-.text-small-step{
-  text-align: center;
-}
-
-.radiologist-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-@media (min-width: 1024px) {
-  .radiologist-section {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-.radiologist-text {
-  max-width: 500px;
-}
-
-.radiologist-text h2 {
-  font-family: 'Helvetica', sans-serif;
+.rehab-plan-heading {
   font-size: 32px;
-  line-height: 1.2;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 1.5rem;
+  margin-bottom: 12px;
 }
 
-.radiologist-text p {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-style: italic;
+.rehab-plan-subtitle {
+  font-size: 20px;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 35px;
-  color: #000;
+  margin-bottom: 12px;
 }
-@media (max-width: 824px){
-  .radiologist-text h2 {
-    font-size: 25px;
-    line-height: 1.2;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 1.5rem;
+
+.rehab-plan-description {
+  font-size: 17px;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.rehab-plan-price {
+  font-size: 40px;
+  font-weight: 600;
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.rehab-plan-price-white {
+  color: white;
+}
+
+.rehab-plan-currency {
+  font-size: 29px;
+}
+
+.rehab-plan-buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.rehab-plan-button {
+  padding: 14px 24px;
+  font-size: 20px;
+  background: #036551;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.rehab-plan-button-light {
+  background: #3EAF99;
+}
+
+.rehab-plan-link {
+  font-size: 18px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rehab-plan-link-white {
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .rehab-plan-cards {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .radiologist-text p {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 35px;
-    color: #000;
-  }
 }
-.radiologist-image img {
-  width: 100%;
-  max-width: 713px;
-  max-height: 300px;
-  border-radius: 30px;
-  object-fit: cover;
+.rehab-plan-checklist {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 24px;
 }
+
+.rehab-plan-checklist li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.rehab-plan-checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #036551;
+  font-weight: bold;
+}
+
+.rehab-plan-followup .rehab-plan-checklist li::before {
+  color: white;
+}
+

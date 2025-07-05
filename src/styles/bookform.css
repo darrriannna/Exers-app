@@ -42,7 +42,7 @@ button {
   padding: 16px 14px 18px;
   color: #fefcfc;
 
-  background-color: #0BAED3;
+  background-color: #043737;
   height: 48px;
 }
 
@@ -95,7 +95,7 @@ textarea {
 .input-field {
   border-radius: 5px;
   box-shadow: 1px 2px 2px #63656327;
-  border: solid 1px #0BAED3;
+  border: solid 1px;
   min-height: 50px;
 }
 

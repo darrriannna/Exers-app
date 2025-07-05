@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/index.css";
-import TranslateWidget from './TranslateWidget';  // Ensure TranslateWidget is imported
+ // Ensure TranslateWidget is imported
 
 const Footer = () => {
   return (
@@ -18,16 +18,15 @@ const Footer = () => {
             </div>
             <div className="col-md-4">
               <h4 className="footer-header">Kontakta oss</h4>
-              <p className="link-footer">010-210 2231</p>
               <p>
-                <a className="link-footer" href="mailto:info@rehabscan.se">info@rehabscan.se</a>
+                <a className="link-footer" href="mailto:info@rehabplan.se">info@rehabplan.se</a>
               </p>
               <h4 className="footer-header">Öppettider</h4>
               <p className="link-footer">Mån-Fre 07:00 - 19:00</p>
             </div>
             <div className="col-md-4">
               <img
-                src="./assets/Footer-logi.svg"
+                src="./assets/fotter-logo.svg"
                 alt="Magnetröntgen utan remiss Sverige - RehabScan"
                 style={{ height: '65px' }}
               />
@@ -35,10 +34,6 @@ const Footer = () => {
           </div>
 
           {/* Insert Translate Widget directly here without <p> tag */}
-          <div className="footer-translate-widget">
-            {/* The Translate Widget should appear here */}
-            <TranslateWidget />
-          </div>
 
         </div>
       </footer>

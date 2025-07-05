@@ -47,15 +47,15 @@ const Navbar = () => {
 
   return (
     <header className={`main-header ${isVisible ? '' : 'navbar-hidden'}`}>
-      <div className="top-strip">
-        <p className='top-strip-text'>Din hälsa är viktig – vi gör den tillgänglig för alla.</p>
-       <p>Inga dolda avgifter</p>
+    <div className="top-strip">
+        <p className='top-strip-text'>Snabb lindring och långsiktig hjälp – utan att lämna hemmet.</p>
+    
         </div>
 
       <nav className="navbar-container">
         <div className="navbar-inner">
           <NavLink to="/" className="navbar-logo" onClick={closeMenus}>
-            <img src={`${process.env.PUBLIC_URL}/assets/new-logo.svg`} alt="Logo" />
+            <img src={`${process.env.PUBLIC_URL}/assets/LOGO.svg`} alt="Logo" />
           </NavLink>
 
           {/* Hamburger Toggle */}
@@ -72,18 +72,6 @@ const Navbar = () => {
 
           {/* Nav Items */}
           <ul className={`navbar-menu ${isNavbarOpen ? 'show' : ''}`}>
-            <li>
-              <NavLink className="nav-link" to="/" onClick={closeMenus}>
-                Hem
-              </NavLink>
-            </li>
-
-            <li className="dropdown" >
-                    <NavLink className="nav-link" to="/prislistaMR" onClick={closeMenus}>
-                     Prislista MR
-                    </NavLink>
-                  
-            </li>
 
             <li>
               <NavLink className="nav-link" to="/om-oss" onClick={closeMenus}>
@@ -99,14 +87,14 @@ const Navbar = () => {
             {/* Mobile Button Placement */}
             <li className="mobile-book">
               <NavLink to="/bokanu" className="btn-book" onClick={closeMenus}>
-                BOKA NU
+              BESTÄLLA
               </NavLink>
             </li>
           </ul>
 
           {/* Desktop Button Placement */}
           <NavLink to="/bokanu" className="btn-book desktop-book" onClick={closeMenus}>
-            BOKA NU
+            BESTÄLLA
           </NavLink>
         </div>
       </nav>
