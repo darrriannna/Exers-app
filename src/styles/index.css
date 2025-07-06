@@ -2606,3 +2606,128 @@ select {
 .pain-summary h3{
 margin-bottom: 10px;
 }
+/* Outer wrapper */
+.offer-card-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+
+}
+
+/* Card container */
+.offer-card {
+  display: flex;
+  max-width: 1372px;
+  width: 100%;
+  background-color: #f1ffe8;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Left Image */
+.offer-image {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offer-image img {
+  width: 100%;
+  max-width: 702px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Right Content */
+.offer-info-box {
+  flex: 1 1 50%;
+  background: #f5ffef;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Price */
+.offer-price {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 1rem;
+}
+.offer-title{
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 35px;
+  color: #043737;
+  margin-bottom: 1.5rem;
+  
+}
+/* Heading */
+.offer-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 35px;
+  color: #000;
+  margin-bottom: 1.5rem;
+}
+
+/* Read more link */
+.offer-readmore {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #000;
+  margin-bottom: 2rem;
+}
+
+/* Button */
+.offer-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #000;
+  border: 1px solid #043d31;
+  border-radius: 20px;
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .offer-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .offer-info-box {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .offer-heading {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .offer-price,
+  .offer-readmore,
+  .offer-button {
+    font-size: 18px;
+  }
+}

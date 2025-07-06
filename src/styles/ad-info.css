@@ -71,10 +71,11 @@
 
 .rehab-plan-price {
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   gap: 6px;
   margin-bottom: 20px;
+  
 }
 
 .rehab-plan-price-white {
@@ -117,7 +118,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 824px) {
   .rehab-plan-cards {
     flex-direction: column;
     align-items: center;
@@ -135,6 +136,7 @@
   margin-bottom: 10px;
   font-size: 17px;
   line-height: 1.4;
+  list-style: none;
 }
 
 .rehab-plan-checklist li::before {
@@ -148,5 +150,64 @@
 
 .rehab-plan-followup .rehab-plan-checklist li::before {
   color: white;
+}
+.rehab-plan-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left; /* ensures consistent alignment */
+  padding: 2rem;
+  min-height: 550px;
+  max-width: 350px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rehab-plan-heading,
+.rehab-plan-subtitle,
+.rehab-plan-checklist,
+.rehab-plan-price,
+.rehab-plan-buttons,
+.rehab-plan-tag {
+  text-align: left; /* enforce left alignment on all elements */
+}
+
+.rehab-plan-heading {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 20px
+}
+
+.rehab-plan-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.rehab-plan-checklist {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-bottom: auto;
+}
+
+.rehab-plan-checklist li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.rehab-plan-price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+.rehab-plan-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
 }
 

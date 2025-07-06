@@ -5,25 +5,30 @@ import RehabPlans from './Plans';
 const HeroWithForm = () => {
   return (
     <div>
-<section className="hero">
-  <div className="container">
-    <div className="hero-content">
-      <div className="image-box">
-        <img src="./assets/pic-tophome.jpg" alt="Woman exercising" />
+     <section className="offer-card-wrapper">
+      <div className="offer-card">
+        <div className="offer-image">
+          <img src="./assets/pic-tophome.jpg" alt="Exercise" />
+        </div>
+        <div className="offer-info-box">
+
+          <p className="offer-price">För bara 299kr</p>
+          <h2 className="offer-heading">
+          Individuella rehabiliteringsplaner
+          skapade av legitimerade experter –  
+          direkt till dig.
+          </h2>
+          <ul className="rehab-plan-checklist">
+            <li>Effektiva övningar anpassade efter dig</li>
+            <li>Ingen väntetid eller fysisk klinik</li>
+            <li>Få hjälp var du än befinner dig – helt digitalt</li>
+          </ul>
+          <a className="offer-readmore" href="/">LÄS MER</a>
+          <button className="offer-button">BESTÄLLA</button>
+        </div>
       </div>
-      <div className="text-box">
-        <p className="price">För bara 200kr</p>
-        <h1>Få dina personliga övningar från Legitimerad sjukvård online</h1>
-        <div className="buttons">
-          <div>
-          <a href="/" className="link-button">LÄS MER</a>
-         </div> <div>
-          <button className="main-button">BESTÄLLA</button>
-        </div></div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
+
 
 <RehabPlans/>
   
