@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/index.css'; // Create a CSS file for styling
-import DynamicForm from './DynamicForm';
+import DynamicForm from './DRBasic';
 
 
 

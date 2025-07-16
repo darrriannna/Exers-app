@@ -1928,6 +1928,7 @@ color: #082e58;
 @media (max-width: 768px){
   .top-strip-text{
     text-align: center;
+    font-size: 14px;
   }
 }
 
@@ -2610,8 +2611,8 @@ margin-bottom: 10px;
 .offer-card-wrapper {
   display: flex;
   justify-content: center;
-  padding: 4rem 1rem;
-
+  padding: 1rem 1rem;
+background-image: url(../../public/assets/top-home.jpg);
 }
 
 /* Card container */

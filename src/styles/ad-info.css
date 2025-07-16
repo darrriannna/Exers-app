@@ -26,7 +26,15 @@
   text-align: left;
   position: relative;
 }
-
+.rehab-plan-card-info{
+  width: 100%;
+  max-width: 360px;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative;
+}
 .rehab-plan-basic {
   background: linear-gradient(212.88deg, #EBF6E4 9.18%, #D6E9CB 80.79%, #E5FFD4 97.31%);
 }
@@ -39,7 +47,10 @@
   background: linear-gradient(152.25deg, #036551 5.93%, #043D31 92.03%);
   color: white;
 }
-
+.rehab-plan-followup-info{
+  background: linear-gradient(152.25deg, #036551e2 5.93%, #01624d 92.03%);
+  color: white;
+}
 .rehab-plan-tag {
   position: absolute;
   top: -20px;
@@ -210,4 +221,59 @@
   align-items: center;
   margin-top: 1rem;
 }
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 800px;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 1rem;
+  border-radius: 8px;
+}
+
+/* Responsive text scaling */
+@media (max-width: 768px) {
+  .caption {
+    font-size: 1.5rem;
+    width: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .caption {
+    font-size: 3rem;
+  }
+}
+
 

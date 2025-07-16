@@ -19,7 +19,7 @@ const RehabPlans = () => {
           </div>
           <div className="rehab-plan-buttons">
             <button className="rehab-plan-button">Beställa</button>
-            <a href="/" className="rehab-plan-link">Läs mer</a>
+            <a href="/plan" className="rehab-plan-link">Läs mer</a>
           </div>
         </div>
         <div className="rehab-plan-card rehab-plan-featured">
@@ -35,7 +35,7 @@ const RehabPlans = () => {
           </div>
           <div className="rehab-plan-buttons">
             <button className="rehab-plan-button">Beställa</button>
-            <a href="/" className="rehab-plan-link">Läs mer</a>
+            <a href="/plan" className="rehab-plan-link">Läs mer</a>
           </div>
         </div>
         <div className="rehab-plan-card rehab-plan-followup">
@@ -51,7 +51,7 @@ const RehabPlans = () => {
           </div>
           <div className="rehab-plan-buttons">
             <button className="rehab-plan-button rehab-plan-button-light">Beställa</button>
-            <a href="/" className="rehab-plan-link rehab-plan-link-white">Läs mer</a>
+            <a href="/plan" className="rehab-plan-link rehab-plan-link-white">Läs mer</a>
           </div>
         </div>
 

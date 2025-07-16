@@ -9,7 +9,7 @@ import '../src/styles/index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import { Home, PageNotFound, BookTime, MRIbookTime, Restrictions } from "./pages";
+import { Home, PageNotFound, BookTime, BookBasic, Restrictions, PlansInfo, AboutPage } from "./pages";
 import { DynamicForm } from './components';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -24,12 +24,12 @@ root.render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bokanu" element={<BookTime />} />
-
+          <Route path="/om-oss" element={<AboutPage/>} />
           <Route path="/dynamic-form" element={<DynamicForm />} />
-          <Route path="/bestalla" element={<MRIbookTime />} />
+          <Route path="/bestalla" element={<BookBasic />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="/integrity-policy" element={<IntegrityPolicy />} />
-
+          <Route path="/plan" element={<PlansInfo />} />
           <Route path="/villkor" element={<Restrictions />} />
           <Route path="/product/*" element={<PageNotFound />} />
 
