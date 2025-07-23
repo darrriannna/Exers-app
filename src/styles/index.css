@@ -2611,16 +2611,22 @@ margin-bottom: 10px;
 .offer-card-wrapper {
   display: flex;
   justify-content: center;
-  padding: 1rem 1rem;
-background-image: url(../../public/assets/top-home.jpg);
+  align-items: center; /* Optional: vertical centering */
+  padding: 1rem;
+  background-image: url(../../public/assets/top-home.jpg);
+  background-size: cover; /* Proper background scaling */
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
 }
 
 /* Card container */
 .offer-card {
   display: flex;
-  max-width: 1372px;
+  max-width: 1100px;
   width: 100%;
-  background-color: #f1ffe8;
+  background-color: #f5ffef;
   border-radius: 15px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
@@ -2638,13 +2644,7 @@ background-image: url(../../public/assets/top-home.jpg);
   justify-content: center;
 }
 
-.offer-image img {
-  width: 100%;
-  max-width: 702px;
-  height: auto;
-  border-radius: 15px;
-  object-fit: cover;
-}
+
 
 /* Right Content */
 .offer-info-box {
@@ -2709,20 +2709,43 @@ background-image: url(../../public/assets/top-home.jpg);
   cursor: pointer;
 }
 
+@keyframes breathe {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.breathe {
+  animation: breathe 4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .offer-card {
     flex-direction: column;
     align-items: center;
+    background-color: transparent;
+    box-shadow: none;
   }
+
+.offer-image{
+  display: none;
+}
+.form-svg{
+  display: none;
+}
 
   .offer-info-box {
     margin-top: 2rem;
     width: 100%;
+ 
   }
 
   .offer-heading {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 38px;
   }
 
@@ -2732,3 +2755,5 @@ background-image: url(../../public/assets/top-home.jpg);
     font-size: 18px;
   }
 }
+
+

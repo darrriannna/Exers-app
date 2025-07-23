@@ -5,6 +5,8 @@ export { default as DynamicForm } from './DRBasic';
 export { default as DynamicFormVideo } from './DFVideo';
 export { default as DynamicFormReview } from './DFReview';
 export { default as SimpleForm } from './BasicForm';
+export { default as VideoForm } from './VideoForm';
+export { default as RevisitForm } from './RevisitForm';
 export { default as RehabPlans } from './Plans';
 export { default as Failed } from './Failed';
 export { default as HeroHome } from './TopHome';

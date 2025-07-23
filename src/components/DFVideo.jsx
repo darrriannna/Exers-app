@@ -38,7 +38,7 @@ const DynamicFormVideo = () => {
     localStorage.setItem('painData', JSON.stringify(painData));
     localStorage.setItem('location', location); // optional backup
 
-    navigate('/bestalla');
+    navigate('/bestalla-samtal');
   };
 
   return (

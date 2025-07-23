@@ -3,6 +3,7 @@ import emailjs from 'emailjs-com';
 
 const VideoForm = () => {
   const [formData, setFormData] = useState({
+    tjanst: 'plan med samtal',
     name: '',
     email: '',
     personnummer: '',

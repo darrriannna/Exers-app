@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/ad-info.css';
 
 const RehabPlans = () => {
@@ -18,7 +19,7 @@ const RehabPlans = () => {
             <span>299</span><span className="rehab-plan-currency">kr</span>
           </div>
           <div className="rehab-plan-buttons">
-            <button className="rehab-plan-button">Beställa</button>
+            <button className="rehab-plan-button"><Link className="rehab-plan-button-link" to="/bokanu" >Beställa</Link></button>
             <a href="/plan" className="rehab-plan-link">Läs mer</a>
           </div>
         </div>
@@ -34,7 +35,7 @@ const RehabPlans = () => {
             <span>899</span><span className="rehab-plan-currency">kr</span>
           </div>
           <div className="rehab-plan-buttons">
-            <button className="rehab-plan-button">Beställa</button>
+            <button className="rehab-plan-button"><Link className="rehab-plan-button-link" to="/bokanu-samtal" >Beställa</Link></button>
             <a href="/plan" className="rehab-plan-link">Läs mer</a>
           </div>
         </div>
@@ -50,7 +51,7 @@ const RehabPlans = () => {
             <span>299</span><span className="rehab-plan-currency">kr</span>
           </div>
           <div className="rehab-plan-buttons">
-            <button className="rehab-plan-button rehab-plan-button-light">Beställa</button>
+            <button className="rehab-plan-button rehab-plan-button-light"><Link className="rehab-plan-button-link" to="/bokanu-uppfojlning" >Beställa</Link></button>
             <a href="/plan" className="rehab-plan-link rehab-plan-link-white">Läs mer</a>
           </div>
         </div>

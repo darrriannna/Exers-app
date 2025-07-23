@@ -3,7 +3,7 @@ import SimpleForm from '../components/BasicForm';
 import { Footer, Navbar } from '../components';
 import '../styles/bookform.css';
 
-const BookBasic = () => {
+const InfoBasicPlan = () => {
   return (
     <div className="body-form">
       <Navbar />
@@ -13,7 +13,7 @@ const BookBasic = () => {
   );
 };
 
-export default BookBasic;
+export default InfoBasicPlan;
 
 
 

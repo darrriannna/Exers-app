@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/ad-info.css';
 
 const RehabPlansInfo = () => {
@@ -29,7 +30,7 @@ const RehabPlansInfo = () => {
             <span>299</span><span className="rehab-plan-currency">kr</span>
           </div>
           <div className="rehab-plan-buttons">
-            <button className="rehab-plan-button">Beställa</button>
+            <button className="rehab-plan-button"><Link className="rehab-plan-button-link" to="/bokanu" >Beställa</Link></button>
           </div>
         </div>
 
@@ -59,7 +60,7 @@ const RehabPlansInfo = () => {
             <span>899</span><span className="rehab-plan-currency">kr</span>
           </div>
           <div className="rehab-plan-buttons">
-            <button className="rehab-plan-button">Beställa</button>
+            <button className="rehab-plan-button"><Link className="rehab-plan-button-link" to="/bokanu-samtal" >Beställa</Link></button>
           </div>
         </div>
 
@@ -90,7 +91,7 @@ const RehabPlansInfo = () => {
             <span>299</span><span className="rehab-plan-currency">kr</span>
           </div>
           <div className="rehab-plan-buttons">
-            <button className="rehab-plan-button rehab-plan-button-light">Beställa</button>
+            <button className="rehab-plan-button rehab-plan-button-light"><Link className="rehab-plan-button-link" to="/bokanu-uppfojlning" >Beställa</Link></button>
           </div>
         </div>
 
